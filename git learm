@@ -24,3 +24,22 @@ tail -5 .git/logs/refs/heads/master //查看这个文件记录master分支指向
 git reflog show master | head -5 //显示此文件的内容
 git reset --hard master@{2} //重置master为两次改变之前的值
 git reset HEAD <paths> //相当于取消之前执行的git add <paths>命令时改变的暂存区
+
+
+1. 替换引用的指向。引用指向新的提交ID
+2. 替换暂存区。替换后，暂存区的内容和引用指向的目录树一致。
+3. 替换工作区。替换后，工作区的内容变的和暂存区一致，也和HEAD所指向的目录树内容一致
+git reset --hard <commit> //执行1,2,3
+git reset --soft <commit> //执行1	
+git reset <commit> 或 git reset --mixed <commit> //执行1,2
+
+git reset //仅用HEAD指向的目录树重置暂存区，工作区不会受到影响，相当于将之前用git add命令更新到暂存区的内容撤出暂存区。引用也未改变，因为应用重置了暂存区到HEAD相当于没重置。
+git reset HEAD //同上
+git reset --filename //仅将文件filename的改动撤出暂存区，暂存区中其他文件不变。相当于对命令git add filename的反向操作。
+git reset HEAD filename //同上
+git reset --soft HEAD^ //工作区和暂存区不改变，但是引用向前回退一次。当对最新提交的提交说明或提交更改不满意时，撤销最新的提交以便重新提交。
+git reset HEAD^ //工作区不改变，但是暂存区会回退到上一次提交之前，引用也会回退一次。
+git reset --mixed HEAD^ //同上
+git reset --hard HEAD^ //彻底撤销最近的提交，引用回退到上一次，而且工作区和缓存区都会回退到上一次提交的状态，自上一次提交以来的全部丢失。
+
+
