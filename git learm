@@ -1,0 +1,26 @@
+git config --global user.name "zhbizgw" //设置用户名
+git config --global user.email zhbizgw_01@163.com //设置邮箱
+
+git config --global alias.st status //设置别名
+git config --global alias.ci "commit -s"
+git config --global alias.co checkout
+git config --global alias.br branch
+
+git init //创建工作区及版本库
+git add //提交及修改文件到暂存区
+git commit //暂存区提交到HEAD
+
+git diff //工作区与暂存区比较
+git diff --cached //暂存区与HEAD比较
+git diff --HEAD //工作区与HEAD比较
+
+git branch //显示当前工作分支
+
+git reset --hard HEAD^ //这条命令就相当于将master重置到上一个老的提交上（注意这条命令中使用 --hard参数，会破坏工作区未提交的改动，慎用。）
+git log --graph --oneline //查看提交历史ID
+git reset --hard 9e8a761 //重置到最早的一次提交 （注意重置命令很危险，会彻底地丢失历史，如果没有记下重置前的master分支指向的提交ID，想要重置回原来的提交似乎是一件麻烦的事情）
+git config core.logallrefupdates //查看工作区版本库是否提供分支日志功能
+tail -5 .git/logs/refs/heads/master //查看这个文件记录master分支指向的变迁
+git reflog show master | head -5 //显示此文件的内容
+git reset --hard master@{2} //重置master为两次改变之前的值
+git reset HEAD <paths> //相当于取消之前执行的git add <paths>命令时改变的暂存区
