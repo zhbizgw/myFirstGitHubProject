@@ -51,4 +51,14 @@ git checkout branch --filename //维持HEAD的指向不变，用branch所指向�
 
 git checkout -- .或者写作git checkout . //注意git checkout 命令后的参数为一个点（"."）。这条命令最危险！会取消所有本地的修改（相对于暂存区）。相当于用暂存区的所有文件直接覆盖本地文件，不给用户任何确认的机会！
 
+git stash //保存当前的工作进度。会分别对暂存区和工作区的状态进行保存。
+git stash list //显示进度列表，此命令显然暗示了git stash可以多次保存工作进度，并且在恢复的时候进行选择。
+git stash pop //从最近保存的进度进行回复（完整命令git stash pop [--index] [<stash>], 如果不使用任何参数，会恢复最新保存的工作进度，并将恢复的工作进度从存储的工作进度列表中删除）
+git stash apply //除了不删除恢复的进度之外，其余和git stash pop命令一样。
+git stash drop //删除一个存储的进度。默认删除最新的进度。
+git stash clear //删除所有存储的进度
+git stash branch //基于进度创建分支。
+git clean -nd //查看那些文件和目录会被删除（在删除本地多余的文件和目录时可以先查看看）
+git clean -fd //真正开始强制删除多余的文件和目录。
+
 
