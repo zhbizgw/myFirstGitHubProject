@@ -1,5 +1,6 @@
 git config --global user.name "zhbizgw" //设置用户名
 git config --global user.email zhbizgw_01@163.com //设置邮箱
+git config --list //查看配置信息
 
 git config --global alias.st status //设置别名
 git config --global alias.ci "commit -s"
