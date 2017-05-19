@@ -61,4 +61,6 @@ git stash branch //基于进度创建分支。
 git clean -nd //查看那些文件和目录会被删除（在删除本地多余的文件和目录时可以先查看看）
 git clean -fd //真正开始强制删除多余的文件和目录。
 
-
+git ls-files //查看暂存区（版本库）中的文件状态，直接在工作区删除，对暂存区和版本库没有影响
+git rm detached-commit.txt //删除文件，删除动作加入暂存区，这时在使用git commit -m "......"就从真正意义上执行了文件删除。
+git mv commit.txt readme //通过将commit.txt改名为readme文件来测试一下在git中如何移动文件。git提供了git mv命令完成改名操作。
