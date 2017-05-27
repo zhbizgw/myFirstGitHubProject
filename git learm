@@ -70,3 +70,16 @@ git clean -fd //真正开始强制删除多余的文件和目录。
 git ls-files //查看暂存区（版本库）中的文件状态，直接在工作区删除，对暂存区和版本库没有影响
 git rm detached-commit.txt //删除文件，删除动作加入暂存区，这时在使用git commit -m "......"就从真正意义上执行了文件删除。
 git mv commit.txt readme //通过将commit.txt改名为readme文件来测试一下在git中如何移动文件。git提供了git mv命令完成改名操作。
+
+git branch //用于显示本地分支信息
+git branch <branchname> //基于头指针（HEAD）指向的提交创建分支，新分支的分支名为<branchname>。
+git branch <branchname> <start-point> //基于提交<start point>创建新分支，新分支的分支名为<branchname>。
+git branch -d <branchname> //删除分支<branchname>时会检查所要删除的分支是否已经合并到其他分支中，否则拒绝删除。
+git branch -d <branchname> //强制删除分支<branchname>，即使该分支没有合并到任何一个分支中。
+git branch -m <oldbranch> <newbranch> //用于重命名分支，如果版本库中已经存在名为<newbranch>的分支，则拒绝执行重命名。
+git branch -M <oldbranch> <newbranch> //用于重命名分支，强制执行。
+
+git branch <newbranch> //创建新分支<newbranch>，创建分支并不会自动切换到新分支。
+git checkout <newbranch> //切换到分支<newbranch>
+git checkout -b <newbranch> [<start_point>] //创建分支并切换分支
+git merge <newbranch> //合并新分支到master
