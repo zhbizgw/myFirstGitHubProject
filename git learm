@@ -83,3 +83,10 @@ git branch <newbranch> //创建新分支<newbranch>，创建分支并不会自�
 git checkout <newbranch> //切换到分支<newbranch>
 git checkout -b <newbranch> [<start_point>] //创建分支并切换分支
 git merge <newbranch> //合并新分支到master
+
+git tag             <tagname> [<commit>] //创建轻量级里程碑
+git tag -a 			<tagname> [<commit>] //创建带说明的里程碑。
+git tag -m <msg> 	<tagname> [<commit>] //创建带说明的里程碑，直接通过-m参数提供里程碑创建说明
+git tag -u  		<tagname> [<commit>] //创建带GnuPG签名的里程碑。
+git tag -u <key-id> <tagname> [<commit>] //创建带GnuPG签名的里程碑，其中-u参数选择指定的私钥进行签名。
+git tag -d <tagname> //删除名为<tagname>的里程碑。
