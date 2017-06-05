@@ -1,0 +1,15 @@
+//Install necessary tools and packages
+1. sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat libsdl1.2-dev xterm lzop python3 dos2unix g++-multilib libssl-dev 
+//mandatory packages.
+2. sudo apt-get git //Version 1.7.8 or later
+sudo apt-get tar //Version 1.24 or later
+sudo apt-get Python //Version 2.7.3 or later excluding Python3.x, which is not supported
+//Install the optional packages:
+3. sudo apt-get install git ncurses5 libstdc++6 lib32stdc++6 
+sudo apt-get install flex bison automake autoconf libtool lib32z1
+//Install GStreamer:
+4. sudo apt-get install lib32z1-dev lib32ncurses5-dev autopoint autotools-dev gtk-doc-tools libglib2.0-dev
+//Install JDK1.6 and set it as the default Java version if recovery is needed.
+5. not do
+6. sudo rm /bin/sh
+sudo ln -s /bin/bash /bin/sh
