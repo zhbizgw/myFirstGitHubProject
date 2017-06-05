@@ -84,4 +84,23 @@ git checkout <newbranch> //切换到分支<newbranch>
 git checkout -b <newbranch> [<start_point>] //创建分支并切换分支
 git merge <newbranch> //合并新分支到master
 
+<<<<<<< HEAD
 git tag
+=======
+git tag             <tagname> [<commit>] //创建轻量级里程碑
+git tag -a 			<tagname> [<commit>] //创建带说明的里程碑。
+git tag -m <msg> 	<tagname> [<commit>] //创建带说明的里程碑，直接通过-m参数提供里程碑创建说明
+git tag -u  		<tagname> [<commit>] //创建带GnuPG签名的里程碑。
+git tag -u <key-id> <tagname> [<commit>] //创建带GnuPG签名的里程碑，其中-u参数选择指定的私钥进行签名。
+git tag -d <tagname> //删除名为<tagname>的里程碑。
+
+git remote add new-remote file:///path/to/repos/hello-user1.git //注册远程版本库，将版本库file://...以new-remote为名进行注册。
+git remote -v //可以更方便的显示已经注册的远程版本库。
+git fetch new-remote //远程版本库的分支复制到本地版本库前缀为new-remote的远程分支中去了。
+git branch -r //查看新增了几个远程分支。
+git remote set-url new-remote file:///path/to/repos/hello-user2.git //更改远程版本库的地址。
+git remote set-url --push new-remote /path/to/repos/hello-user2.git //为推送操作设置单独的URL地址。
+git remote rename new-remote user2 //更改远程版本库的名称
+git remote update //当注册了多个远程版本库并希望获取所以远程版本库的更新时，git提供了一个简单的命令。
+git remote rm user2 //删除远程版本库
+>>>>>>> 723320489688b8baefd2e7ec3141c744e0f1471e
