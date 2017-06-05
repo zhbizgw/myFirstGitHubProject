@@ -83,3 +83,5 @@ git branch <newbranch> //创建新分支<newbranch>，创建分支并不会自�
 git checkout <newbranch> //切换到分支<newbranch>
 git checkout -b <newbranch> [<start_point>] //创建分支并切换分支
 git merge <newbranch> //合并新分支到master
+
+git tag
